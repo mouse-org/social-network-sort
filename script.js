@@ -1,10 +1,6 @@
 // Only execute this code once the DOM (all other content) is loaded.
 document.addEventListener("DOMContentLoaded", function(event) {
 
-  // See dragula.js 
-  var arraylike = document.getElementsByClassName("drag-container");
-  var containers = Array.prototype.slice.call(arraylike);
-  dragula({ containers: containers });
 
   // Generates a list of social networks to choose from:
   var socialNetworkHTML;
@@ -25,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     console.log(cat + ": " + updates[cat]);
 
-    statusUpdateHTML += "<div class='status-update-category' id='" + cat + "-updates'>";
+    statusUpdateHTML += "<div class='status-update-category drag-container' id='" + cat + "-updates'>";
   
     for (j = 0; j < updates[cat].length; j++) {
       statusUpdateHTML += "<div class='status-update'><div class='status-avatar'><img src='images/speaking-user.png'></div><div class='status-text'>" + updates[cat][j][0] + "</div>";
@@ -45,7 +41,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   statusUpdateHTML += "</div>";
   statusUpdateList.insertAdjacentHTML("beforeend", statusUpdateHTML);
 
-
+    // See dragula.js 
+  var arraylike = document.getElementsByClassName("drag-container");
+  var containers = Array.prototype.slice.call(arraylike);
+  dragula({ containers: containers });
 
 });
 
