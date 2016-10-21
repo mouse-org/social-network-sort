@@ -61,7 +61,7 @@ var availableSocialNetworks =
     [
       ["Facebook", "facebook.png", "#3b5998"],
       ["Flickr", "flickr.jpeg", "#ff0084"], 
-      ["Instagram","instagram.png", "#9b6954"],
+      ["Instagram","instagram.png", "#bc2a8d"],
       ["LinkedIn", "linkedin.jpeg", "#007bb5"],
       ["Periscope", "periscope.jpeg", "#D95343"],
       ["Pinterest", "pintrest.jpeg", "#cb2027"],
