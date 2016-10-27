@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   updates = availableStatusUpdates;
 
-  statusUpdateHTML = "<div id='status-update-library'><div id='type-updates-buttons'><div class='updates-button' id='text-updates-button'>Text</div><div class='updates-button' id='image-updates-button'>Images</div><div class='updates-button' id='video-updates-button'>Videos</div><div class='updates-button' id='media-updates-button'>Media</div></div>"
+  statusUpdateHTML = "<div id='status-update-library'><div id='type-updates-buttons'><div class='updates-button' id='text-updates-button'>Text</div><div class='updates-button' id='image-updates-button'>Images</div><div class='updates-button' id='video-updates-button'>Videos</div><div class='updates-button' id='media-updates-button'>Audio</div></div>"
 
 
   for (cat in updates){
@@ -93,18 +93,31 @@ var availableStatusUpdates =
         ["Beagles are my favorite kind of dog! So cute!", "image", "images/beagle.jpg"],
         ["Finally finished my Arduino project for my computer science class!", "image", "images/arduino.jpg"],
         ["My family is all packed up for our summer trip, going to miss our house being gone for a month!", "image", "images/house.jpg"],
-        ["Look at this amazing picture of the sunset I took!", "image", "images/sunset.jpg"]
+        ["Look at this amazing picture of the sunset I took!", "image", "images/sunset.jpg"],
+        ["I found this old picture of our school in a book. Wow things have changed!", "image", "images/oldschool.jpg"],
+        
+
 
       ],
       video: [
-        ["Hey @tommie and @gracie, just uploaded that hilarious video I took at your pool party! LOL!", "image", "images/pool.png"]
+        ["Hey @tommie and @gracie, just uploaded that hilarious video I took at your pool party! LOL!", "image", "images/pool.png"],
+        ["Coding all day, learning a lot!", "image", "images/terminal.gif"],
+        ["This is my favorite new dance!", "image", "images/dancing.gif"],
+        ["Making an electronics project", "image", "images/circuit.gif"],
+        ["OMG wut???!!1!!1", "image", "images/hamburger.png"],
+        ["Can't stop watching 👀", "image", "images/tesseract.gif"],
+        ["TFW I'm skipping math class cause ¯\\_(ツ)_/¯", "image", "images/walk.gif"],
+        ["Game last night was soooo close ⚽️😅", "image", "images/soccer.gif"],
+        ["My lunch lol", "image", "images/food.gif"]
 
       ],
 
       media: [
-        ["OMG wut???!!1!!1", "image", "images/hamburger.png"],
         ["remixed a beatles song. Tell me if you like it!", "image", "images/bulldog.png"],
-                ["I like to program electronic drums, this is my newest track:", "image", "images/drums.png"]
+        ["Sampling this trombone sound in my new song", "image", "images/trombone.png"],
+        ["I like to program electronic drums, this is my newest track:", "image", "images/drums.png"],
+        ["My new favorite song!", "image", "images/song2.png"],
+        ["This Ghandi recording is so inspiring!!", "image", "images/ghandi.png"]
 
       ]
     }
