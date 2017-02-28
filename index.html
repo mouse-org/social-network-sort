@@ -4,6 +4,8 @@ To Dos:
 - Printable version to save
 - Write your own status updates
 - Remove status updates
+  - Put 'x' icon to click
+  - Move status back to library on 'x' click
 - Update H1 instructions on each new step
 - Add more instructions below if necessary
 - CSS comments
@@ -11,6 +13,9 @@ To Dos:
 - @media for phone and test on tablet
 - Add other updates from other types
 - Make + box disappear when there are more than 2 statuses in the list
+
+
+- Delete placeholders when the first status is added
 
 Maybes:
 - Freeze "+" boxes or Remove when # of statuses > 1
@@ -33,6 +38,14 @@ Maybes:
       <div id="loading">
         <img src="images/gear-animation-500.gif">
       </div>
+      <h2 id="counters">
+        <div id="c0">
+        </div>
+        <div id="c1">
+        </div>
+        <div id="c2">
+        </div>
+      </h2>
       <h1 id="directions">
         Pick 3 Social Networks that you use!
       </h1>
@@ -143,7 +156,7 @@ Maybes:
           </div>
         </div>
         <div id="status-updates">
-          <h2>Status Updates</h2>
+          <h2>Status Update Library</h2>
           <div id="status-list" class="status-list">
           </div>
            
@@ -152,6 +165,8 @@ Maybes:
     </div>
     <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
     <script src="dragula.js"></script>
+    <script src="data/statuses.js"></script>
+    <script src="data/networks.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

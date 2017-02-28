@@ -248,6 +248,8 @@ ul {
   min-width: 40px;
   width: 30%;
   margin: 0 35%;
+  background-color: #FFF;
+  border-radius: 10px;
 }
 
 #chosen-networks {
