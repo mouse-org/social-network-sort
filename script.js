@@ -5,19 +5,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Generates a list of social networks to choose from:
   var socialNetworkHTML;
 
-
   for (i in networkList) {
     socialNetworkHTML = "<li onclick='chooseNetwork(" + i + ")' class='social-network-choice' id='" + networkList[i].name + "'>" + "<img class='logo' src='images/logos/" + networkList[i].imageURL + "'><br>" + networkList[i].name + "</li>";
     socialNetworkList.insertAdjacentHTML("beforeend", socialNetworkHTML);
   }
   
+  // Generates the list of status updates in the library in 4 categories.
   var statusUpdateHTML;
 
   updates = availableStatusUpdates;
-
+  // Generates the buttons to select each category of update.
   statusUpdateHTML = "<div id='status-update-library'><div id='type-updates-buttons'><div class='updates-button' id='text-updates-button'>Text</div><div class='updates-button' id='image-updates-button'>Images</div><div class='updates-button' id='video-updates-button'>Videos</div><div class='updates-button' id='media-updates-button'>Audio</div></div>"
 
-
+  // Populates each update category with the available updates.
   for (cat in updates){
 
     console.log(cat + ": " + updates[cat]);
@@ -42,15 +42,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
   statusUpdateHTML += "</div>";
   statusUpdateList.insertAdjacentHTML("beforeend", statusUpdateHTML);
 
-    // See dragula.js 
+  // See dragula.js 
   var arraylike = document.getElementsByClassName("drag-container");
   var containers = Array.prototype.slice.call(arraylike);
-  dragula({ containers: containers });
+  dragula({ containers: containers })
+    .on("drop", function (el) {
+      $(el).siblings(".blank-status-update").hide();
+    })
+    .on("drag", function (el) {
+      console.log("Text: " + el.innerHTML);
+      //console.log("Siblings: " + $(el).siblings.length);
+      sibs = $(el).siblings(".status-update");
+      console.log("LENGTH: " + sibs.length);
+      for (var i = 0; i < sibs.length; i++) {
+        console.log(i + ": " + sibs[i]);
+      }
+      if ($(el).siblings(".status-update").length === 1){
+        $(el).siblings(".blank-status-update").show();
+      }
+    });
 
 });
 
-// This code executes when this file is loaded.
-
+// This code starts executing when this file is loaded.
 var socialNetworkList = document.getElementById("social-network-list");
 var statusUpdateList = document.getElementById("status-list");
 var chosenNetworks = document.getElementById("chosen-networks");
@@ -64,6 +78,12 @@ var c0 = document.getElementById("c0");
 
 var socialNetworks = []
 var numberOfNetworksChosen = 0;
+
+
+
+//<div class="status-update blank-status-update">
+//+
+//</div>
 
 function chooseNetwork(networkID) {
   socialNetwork = networkList[networkID];
@@ -92,6 +112,8 @@ function chooseNetwork(networkID) {
       directions.innerHTML = "Move statuses from the library into the appropriate network."
     }, 500);
   }
+
+
 
   $('#text-updates-button').click(function(){
       $('.status-update-category').css('display', 'none');
