@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <!--
 To Dos:
+* Add images to printable version.
+* Add back to sort button
+* Remove used button
+* Clear print area when back to sort
+
 - Printable version to save
 - Write your own status updates
 - Remove status updates
   - Put 'x' icon to click
   - Move status back to library on 'x' click
-- Update H1 instructions on each new step
 - Add more instructions below if necessary
 - CSS comments
 - Fix box alignment
 - @media for phone and test on tablet
 - Add other updates from other types
-- Make + box disappear when there are more than 2 statuses in the list
-
-
-- Delete placeholders when the first status is added
 
 Maybes:
 - Freeze "+" boxes or Remove when # of statuses > 1
@@ -34,6 +34,11 @@ Maybes:
     <link rel="stylesheet" href="dragula.css">
   </head>
   <body>
+    <div id="button" onClick="printList()">
+    Click to Print
+    </div>
+    <div id="printer-friendly">
+    </div>
     <div id="main-container">
       <div id="loading">
         <img src="images/gear-animation-500.gif">

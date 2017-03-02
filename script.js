@@ -143,5 +143,35 @@ function chooseNetwork(networkID) {
   });
 }
 
+function addToPrint(html) {
+  $("#printer-friendly").append(html);
+  $("#printer-friendly").append("<br>");
+}
+
+function printList(){
+  
+  addToPrint("<h2>My Social Network Sort:</h2>");
+  var lists = document.getElementsByClassName("network");
+  for (l = 0; l < lists.length; l++) {
+    name = lists[l].getElementsByClassName("network-name")[0].innerHTML;
+    addToPrint("<h3>" + name + "</h3>");
+    updatesList = lists[l].getElementsByClassName("drag-container")[0];
+    updates = updatesList.getElementsByClassName("status-update");
+    for (u = 0; u < updates.length; u++) {
+      anUpdate = updates[u].getElementsByClassName("status-text")[0]
+      if (anUpdate) {
+        updateText = anUpdate.innerHTML;
+        addToPrint((u + 1) + ": " + updateText);
+      }
+    }
+
+    //Add images also!
+  }
+
+  $("#printer-friendly").css("display", "block");
+  $("#main-container").css("display", "none");
+  
+}
+
 
 

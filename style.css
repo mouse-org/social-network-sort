@@ -256,3 +256,20 @@ ul {
   display: none;
   float: left;
 }
+
+#button {
+  border: 3px solid orange;
+  cursor: pointer;
+  text-align: center;
+  width: 20%;
+  padding: 5px;
+}
+
+#printer-friendly {
+  display: none;
+  background-color: #F8F8F8;
+  min-height: 100px;
+  width: 100%;
+  border: 1px solid green;
+  margin: 20px 0;
+}
