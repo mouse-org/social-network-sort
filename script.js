@@ -44,24 +44,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   // See dragula.js 
   var arraylike = document.getElementsByClassName("drag-container");
+  var placeholders = document.getElementsByClassName("blank-status-update");
   var containers = Array.prototype.slice.call(arraylike);
-  dragula({ containers: containers })
-    .on("drop", function (el) {
+
+  dragula(containers, {
+  invalid: function (el, handle) {
+    if (el.className.includes("blank-status-update")) {
+      return true;
+    }
+    
+  }
+})
+    .on("drop", function(el) {
       $(el).siblings(".blank-status-update").hide();
     })
-    .on("drag", function (el) {
-      console.log("Text: " + el.innerHTML);
-      //console.log("Siblings: " + $(el).siblings.length);
+    .on("drag", function(el) {
       sibs = $(el).siblings(".status-update");
-      console.log("LENGTH: " + sibs.length);
-      for (var i = 0; i < sibs.length; i++) {
-        console.log(i + ": " + sibs[i]);
-      }
-      if ($(el).siblings(".status-update").length === 1){
+      if ($(el).siblings(".status-update").length == 1){
         $(el).siblings(".blank-status-update").show();
       }
     });
-
 });
 
 // This code starts executing when this file is loaded.
