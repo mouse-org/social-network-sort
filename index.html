@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!--
 To Dos:
-- Printable version to save
 - Write your own status updates
 - Remove status updates
   - Put 'x' icon to click
@@ -9,10 +8,13 @@ To Dos:
 - Add more instructions below if necessary
 - CSS comments
 - Fix box alignment
-- @media for phone and test on tablet
 - Add other updates from other types
+- Better styles
 - Responsive layout
+- Condense Status Update Library Button code
 # Fix update text that breaks out of boxes
+? 64bit encoded url parameter for saving
+? Figure out if I need to be floating stuff at all
 -->
 
 
@@ -161,6 +163,24 @@ To Dos:
         <div id="status-updates">
           <h2>Status Update Library</h2>
           <div id="status-list" class="status-list">
+
+            <div id="status-update-library">
+              <div id="type-updates-buttons">
+                <div class='updates-button' id='text-updates-button'>Text</div><div class='updates-button' id='image-updates-button'>Images</div><div class='updates-button' id='video-updates-button'>Videos</div><div class='updates-button' id='media-updates-button'>Audio</div><div class='updates-button' id='new-updates-button'>&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;</div>
+              </div>
+              <div id="update-categories">
+                <div class="status-update-category drag-container" id="new-updates">
+                  <div class='status-update new-status-update'><div class='status-avatar'><img src='images/speaking-user.png'></div><div id="new-status-text" class='status-text'></div><div class='status-preview'><img src="#"></div></div>
+                </div>
+                <div id="new-status-form">
+                  <label>Status:</label><br>
+                  <input type="text" id="new-status-text-input" class="new-status-input" onkeyup="populateNewStatus()"></input><br>
+                  <label>Image:</label><br>
+                  <input type="text" class="new-status-input"></input><br>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>

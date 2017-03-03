@@ -11,17 +11,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   // Generates the list of status updates in the library in 4 categories.
-  var statusUpdateHTML;
-
   updates = availableStatusUpdates;
+  var statusUpdateHTML = "";
   // Generates the buttons to select each category of update.
-  statusUpdateHTML = "<div id='status-update-library'><div id='type-updates-buttons'><div class='updates-button' id='text-updates-button'>Text</div><div class='updates-button' id='image-updates-button'>Images</div><div class='updates-button' id='video-updates-button'>Videos</div><div class='updates-button' id='media-updates-button'>Audio</div></div>"
 
   // Populates each update category with the available updates.
   for (cat in updates){
-
-    console.log(cat + ": " + updates[cat]);
-
     statusUpdateHTML += "<div class='status-update-category drag-container' id='" + cat + "-updates'>";
 
     for (j = 0; j < updates[cat].length; j++) {
@@ -38,9 +33,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     statusUpdateHTML += "</div>";
   }
-
-  statusUpdateHTML += "</div>";
-  statusUpdateList.insertAdjacentHTML("beforeend", statusUpdateHTML);
+  statusUpdateLib.insertAdjacentHTML("afterbegin", statusUpdateHTML);
 
   // See dragula.js
   var arraylike = document.getElementsByClassName("drag-container");
@@ -48,27 +41,37 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var containers = Array.prototype.slice.call(arraylike);
 
   dragula(containers, {
-  invalid: function (el, handle) {
-    if (el.className.includes("blank-status-update")) {
-      return true;
-    }
-
-  }
-})
-    .on("drop", function(el) {
-      $(el).siblings(".blank-status-update").hide();
-    })
-    .on("drag", function(el) {
-      sibs = $(el).siblings(".status-update");
-      if ($(el).siblings(".status-update").length == 1){
-        $(el).siblings(".blank-status-update").show();
+    invalid: function (el, handle) {
+      if (el.className.includes("blank-status-update")) {
+        return true;
       }
-    });
+
+    },
+
+    copy: function(el) {
+      if(el.className.includes("new-status-update")) {
+        return true;
+      }
+    }
+  })
+  .on("drop", function(el) {
+    $(el).siblings(".blank-status-update").hide();
+    if (el.className.includes("blank-status-udpate")) {
+      newCopied = el.children("#new-status-text");
+      // Need to remove ID from the copied text update.
+    }
+  })
+  .on("drag", function(el) {
+    sibs = $(el).siblings(".status-update");
+    if ($(el).siblings(".status-update").length == 1){
+      $(el).siblings(".blank-status-update").show();
+    }
+  });
 });
 
 // This code starts executing when this file is loaded.
 var socialNetworkList = document.getElementById("social-network-list");
-var statusUpdateList = document.getElementById("status-list");
+var statusUpdateLib = document.getElementById("update-categories");
 var chosenNetworks = document.getElementById("chosen-networks");
 var networks = document.getElementById("networks");
 var loading = document.getElementById("loading");
@@ -137,10 +140,25 @@ function chooseNetwork(networkID) {
       $('#media-updates').css('display', 'block');
   });
 
+  $('#new-updates-button').click(function(){
+      $('.status-update-category').css('display', 'none');
+      $('#new-updates').css('display', 'block');
+  });
+
   $('.slider').click(function(){
       $(this).children('.public').toggle();
       $(this).children('.private').toggle();
   });
+
+
+}
+
+function populateNewStatus() {
+  console.log("keyup");
+  newStatusTextInput = document.getElementById("new-status-text-input");
+  newStatusText = document.getElementById("new-status-text");
+  console.log(newStatusTextInput.value);
+  newStatusText.innerHTML = newStatusTextInput.value;
 }
 
 function togglePrint() {

@@ -147,8 +147,13 @@ ul {
   float: left;
 }
 
+#update-categories {
+  width: 100%;
+}
+
 .status-update-category {
   float: left;
+  width: 100%;
 }
 
 #text-updates {
@@ -277,4 +282,10 @@ ul {
 #printer-friendly img {
   width: 200px;
   height: auto;
+}
+
+.new-status-input {
+  width: 100%;
+  font-size: 125%;
+  line-height: 150%;
 }
