@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     socialNetworkHTML = "<li onclick='chooseNetwork(" + i + ")' class='social-network-choice' id='" + networkList[i].name + "'>" + "<img class='logo' src='images/logos/" + networkList[i].imageURL + "'><br>" + networkList[i].name + "</li>";
     socialNetworkList.insertAdjacentHTML("beforeend", socialNetworkHTML);
   }
-  
+
   // Generates the list of status updates in the library in 4 categories.
   var statusUpdateHTML;
 
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     console.log(cat + ": " + updates[cat]);
 
     statusUpdateHTML += "<div class='status-update-category drag-container' id='" + cat + "-updates'>";
-  
+
     for (j = 0; j < updates[cat].length; j++) {
       statusUpdateHTML += "<div class='status-update'><div class='status-avatar'><img src='images/speaking-user.png'></div><div class='status-text'>" + updates[cat][j][0] + "</div>";
       if (updates[cat][j].length > 1) {
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   statusUpdateHTML += "</div>";
   statusUpdateList.insertAdjacentHTML("beforeend", statusUpdateHTML);
 
-  // See dragula.js 
+  // See dragula.js
   var arraylike = document.getElementsByClassName("drag-container");
   var placeholders = document.getElementsByClassName("blank-status-update");
   var containers = Array.prototype.slice.call(arraylike);
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (el.className.includes("blank-status-update")) {
       return true;
     }
-    
+
   }
 })
     .on("drop", function(el) {
@@ -96,12 +96,12 @@ function chooseNetwork(networkID) {
   networkName = document.getElementById(selectedNetwork + "-name");
   firstStatus = document.getElementById(selectedNetwork + "-first-status");
   $(document.getElementById(socialNetwork.name)).addClass("selected");
-  
+
   network.style.background = socialNetwork.color;
   networkName.insertAdjacentHTML("afterbegin", socialNetwork.name);
   networkName.insertAdjacentHTML("afterend", "<img src='images/logos/" + socialNetwork.imageURL + "' class='logo-small'>");
   firstStatus.insertAdjacentHTML("beforeend", socialNetwork.name);
-  
+
   numberOfNetworksChosen += 1;
 
   // When the user chooses 3 networks:
@@ -143,13 +143,19 @@ function chooseNetwork(networkID) {
   });
 }
 
+function togglePrint() {
+  $("#main-container").toggle();
+  $("#printer-friendly").toggle();
+  $(".print-button").toggle();
+}
+
 function addToPrint(html) {
   $("#printer-friendly").append(html);
   $("#printer-friendly").append("<br>");
 }
 
 function printList(){
-  
+
   addToPrint("<h2>My Social Network Sort:</h2>");
   var lists = document.getElementsByClassName("network");
   for (l = 0; l < lists.length; l++) {
@@ -158,20 +164,23 @@ function printList(){
     updatesList = lists[l].getElementsByClassName("drag-container")[0];
     updates = updatesList.getElementsByClassName("status-update");
     for (u = 0; u < updates.length; u++) {
-      anUpdate = updates[u].getElementsByClassName("status-text")[0]
+      anUpdate = updates[u].getElementsByClassName("status-text")[0];
       if (anUpdate) {
         updateText = anUpdate.innerHTML;
         addToPrint((u + 1) + ": " + updateText);
+        aPreview = updates[u].getElementsByClassName("status-preview")[0];
+        if (aPreview) {
+          updatePreview = aPreview.innerHTML;
+          addToPrint(updatePreview);
+        }
       }
     }
-
-    //Add images also!
   }
+  togglePrint();
 
-  $("#printer-friendly").css("display", "block");
-  $("#main-container").css("display", "none");
-  
 }
 
-
-
+function backToSort() {
+  togglePrint();
+  document.getElementById("printer-friendly").innerHTML = "";
+}

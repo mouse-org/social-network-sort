@@ -178,7 +178,7 @@ ul {
 .status-update {
   background-color: #EAEAEA;
   padding: 5px;
-  cursor: move; 
+  cursor: move;
   float: left;
   width: 100%;
   margin-bottom: 5px;
@@ -257,7 +257,7 @@ ul {
   float: left;
 }
 
-#button {
+.print-button {
   border: 3px solid orange;
   cursor: pointer;
   text-align: center;
@@ -272,4 +272,9 @@ ul {
   width: 100%;
   border: 1px solid green;
   margin: 20px 0;
+}
+
+#printer-friendly img {
+  width: 200px;
+  height: auto;
 }

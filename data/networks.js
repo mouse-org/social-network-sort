@@ -40,6 +40,14 @@ var networkList = [
     ]
   },
   {
+    "name": "Pintrest",
+    "imageURL": "pintrest.jpeg",
+    "color": "#cb2027",
+    "statusUpdates": [
+      "Hello World! This is my first post on Pintrest!"
+    ]
+  },
+  {
     "name": "Snapchat",
     "imageURL": "snapchat.png",
     "color": "#fffc00",

@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <!--
 To Dos:
-* Add images to printable version.
-* Add back to sort button
-* Remove used button
-* Clear print area when back to sort
-
 - Printable version to save
 - Write your own status updates
 - Remove status updates
@@ -16,10 +11,8 @@ To Dos:
 - Fix box alignment
 - @media for phone and test on tablet
 - Add other updates from other types
-
-Maybes:
-- Freeze "+" boxes or Remove when # of statuses > 1
-- 
+- Responsive layout
+# Fix update text that breaks out of boxes
 -->
 
 
@@ -34,8 +27,13 @@ Maybes:
     <link rel="stylesheet" href="dragula.css">
   </head>
   <body>
-    <div id="button" onClick="printList()">
-    Click to Print
+    <div id="buttons">
+      <div class="print-button" onClick="printList()">
+        Click to Print
+      </div>
+      <div class="print-button" onClick="backToSort()" style="display: none;">
+        Back to Sorting
+      </div>
     </div>
     <div id="printer-friendly">
     </div>
@@ -55,15 +53,15 @@ Maybes:
         Pick 3 Social Networks that you use!
       </h1>
       <ul id="social-network-list">
-        
+
       </ul>
-    
-    
+
+
       <div id="chosen-networks">
         <div id="networks">
           <div id="network0" class="network">
             <h2 id="network0-name" class="network-name"></h2>
-            <div class="privacy-sliders"> 
+            <div class="privacy-sliders">
               <div class="slider">
                 <div class="public">
                   <div class="priv-text">Public</div>
@@ -89,13 +87,13 @@ Maybes:
                 <div class="status-update blank-status-update">
                   +
                 </div>
-                <span class="clear"></span> 
+                <span class="clear"></span>
               </div>
             </div>
          </div>
          <div id="network1" class="network">
             <h2 id="network1-name" class="network-name"></h2>
-            <div class="privacy-sliders"> 
+            <div class="privacy-sliders">
               <div class="slider">
                 <div class="public">
                   <div class="priv-text">Public</div>
@@ -122,14 +120,14 @@ Maybes:
                   +
                 </div>
                 <span class="clear"></span>
-               
+
               </div>
 
             </div>
           </div>
           <div id="network2" class="network">
             <h2 id="network2-name" class="network-name"></h2>
-            <div class="privacy-sliders"> 
+            <div class="privacy-sliders">
               <div class="slider">
                 <div class="public">
                   <div class="priv-text">Public</div>
@@ -164,11 +162,11 @@ Maybes:
           <h2>Status Update Library</h2>
           <div id="status-list" class="status-list">
           </div>
-           
+
         </div>
       </div>
     </div>
-    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <script src="jquery-3.1.1.min.js"></script>
     <script src="dragula.js"></script>
     <script src="data/statuses.js"></script>
     <script src="data/networks.js"></script>
