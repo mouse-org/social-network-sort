@@ -170,13 +170,14 @@ To Dos:
               </div>
               <div id="update-categories">
                 <div class="status-update-category drag-container" id="new-updates">
-                  <div class='status-update new-status-update'><div class='status-avatar'><img src='images/speaking-user.png'></div><div id="new-status-text" class='status-text'></div><div class='status-preview'><img src="#"></div></div>
+                  <div class='status-update new-status-update'><div class='status-avatar'><img src='images/speaking-user.png'></div><div id="new-status-text" class='status-text'></div><div id="new-status-preview" class='status-preview'><img id="new-status-image" src="#"></div></div>
                 </div>
                 <div id="new-status-form">
                   <label>Status:</label><br>
                   <input type="text" id="new-status-text-input" class="new-status-input" onkeyup="populateNewStatus()"></input><br>
                   <label>Image:</label><br>
-                  <input type="text" class="new-status-input"></input><br>
+                  <input type="text" id="new-status-image-input" class="new-status-input"></input><br>
+                  <button id="new-status-image-button" onclick="addImageToStatus()">Add Image</button>
                 </div>
               </div>
             </div>

@@ -289,3 +289,7 @@ ul {
   font-size: 125%;
   line-height: 150%;
 }
+
+#new-status-preview {
+  display: none;
+}

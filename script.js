@@ -57,10 +57,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
   .on("drop", function(el) {
     $(el).siblings(".blank-status-update").hide();
     if (el.className.includes("new-status-update")) {
-      newCopied = $(el).children("#new-status-text");
-      $(newCopied).removeAttr("id");
-      $("#new-status-text-input").val("");
+      $(el).children("#new-status-text").removeAttr("id");
+      $(el).children("#new-status-preview").children("#new-status-image").removeAttr("id");
+      $(el).children("#new-status-preview").removeAttr("id");
+      $(".new-status-input").val("");
       $("#new-status-text").html("");
+      $("#new-status-image").attr("src", "#");
+      $("#new-status-preview").hide();
+
     }
   })
   .on("drag", function(el) {
@@ -156,9 +160,12 @@ function chooseNetwork(networkID) {
 }
 
 function populateNewStatus() {
-  newStatusTextInput = document.getElementById("new-status-text-input");
-  newStatusText = document.getElementById("new-status-text");
-  newStatusText.innerHTML = newStatusTextInput.value;
+  $("#new-status-text").html($("#new-status-text-input").val());
+}
+
+function addImageToStatus() {
+  $("#new-status-image").attr("src", $("#new-status-image-input").val());
+  $("#new-status-preview").show();
 }
 
 function togglePrint() {
