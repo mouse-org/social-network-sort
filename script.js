@@ -56,9 +56,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
   })
   .on("drop", function(el) {
     $(el).siblings(".blank-status-update").hide();
-    if (el.className.includes("blank-status-udpate")) {
-      newCopied = el.children("#new-status-text");
-      // Need to remove ID from the copied text update.
+    if (el.className.includes("new-status-update")) {
+      newCopied = $(el).children("#new-status-text");
+      $(newCopied).removeAttr("id");
+      $("#new-status-text-input").val("");
+      $("#new-status-text").html("");
     }
   })
   .on("drag", function(el) {
@@ -154,10 +156,8 @@ function chooseNetwork(networkID) {
 }
 
 function populateNewStatus() {
-  console.log("keyup");
   newStatusTextInput = document.getElementById("new-status-text-input");
   newStatusText = document.getElementById("new-status-text");
-  console.log(newStatusTextInput.value);
   newStatusText.innerHTML = newStatusTextInput.value;
 }
 
