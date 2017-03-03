@@ -1,5 +1,6 @@
 // Only execute this code once the DOM (all other content) is loaded.
 document.addEventListener("DOMContentLoaded", function(event) {
+  console.log(window.location.search);
 
 
   // Generates a list of social networks to choose from:
@@ -64,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       $("#new-status-text").html("");
       $("#new-status-image").attr("src", "#");
       $("#new-status-preview").hide();
-
     }
   })
   .on("drag", function(el) {
