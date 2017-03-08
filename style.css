@@ -51,7 +51,7 @@ ul {
 .network {
   width: 30%;
   float: left;
-  margin: 1em 1%;
+  margin: 0 1%;
   padding: 10px;
   background-color: lightgrey;
 }
@@ -60,6 +60,7 @@ ul {
   float: left;
   width: 50%;
   margin: 5px 25%;
+  cursor: pointer;
 
 }
 
@@ -127,16 +128,22 @@ ul {
   border: 10px solid darkturquoise;
 }
 
+#status-updates h2 {
+  margin: 0;
+}
+
 #type-updates-buttons {
-  float: left;
+  position: relative;
+  right: 5px;
 }
 
 .updates-button {
-  display: inline;
-  border: 2px solid black;
+  display: inline-block;
+  border: 1px solid black;
   padding: 5px;
   background-color: #00a886;
   margin: 5px;
+  border-radius: 5px;
 }
 
 .updates-button:hover {
@@ -172,10 +179,12 @@ ul {
   display: none;
 }
 
+#new-updates {
+  display: none;
+}
+
 .status-list {
   min-height: 50px;
-  border: 1px dotted grey;
-  float: left;
   width: 100%;
   padding: 5px 5px 0px;
 }
@@ -272,11 +281,14 @@ ul {
 
 #printer-friendly {
   display: none;
-  background-color: #F8F8F8;
   min-height: 100px;
   width: 100%;
-  border: 1px solid green;
   margin: 20px 0;
+}
+
+#printer-friendly h3 {
+  margin-top: 2em;
+  margin-bottom: .5em;
 }
 
 #printer-friendly img {
