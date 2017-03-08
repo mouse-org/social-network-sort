@@ -14,7 +14,6 @@ To Dos:
 - Responsive layout
 - Condense Status Update Library Button code
 # Fix update text that breaks out of boxes
-# Status library buttons and header shouldn't scroll
 ? Figure out if I need to be floating stuff at all
 -->
 
@@ -161,14 +160,18 @@ To Dos:
             </div>
           </div>
         </div>
-        <div id="status-updates">
+        <div id="status-updates-library-header">
           <h2>Status Update Library</h2>
+          <div id="type-updates-buttons">
+            <div class='updates-button' id='text-updates-button'>Text</div><div class='updates-button' id='image-updates-button'>Images</div><div class='updates-button' id='video-updates-button'>Videos</div><div class='updates-button' id='media-updates-button'>Audio</div><div class='updates-button' id='new-updates-button'>&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;</div>
+          </div>
+        </div>
+        <div id="status-updates">
+
           <div id="status-list" class="status-list">
 
             <div id="status-update-library">
-              <div id="type-updates-buttons">
-                <div class='updates-button' id='text-updates-button'>Text</div><div class='updates-button' id='image-updates-button'>Images</div><div class='updates-button' id='video-updates-button'>Videos</div><div class='updates-button' id='media-updates-button'>Audio</div><div class='updates-button' id='new-updates-button'>&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;</div>
-              </div>
+
               <div id="update-categories">
                 <div class="status-update-category drag-container" id="new-updates">
                   <div class='status-update new-status-update'><div class='status-avatar'><img src='images/speaking-user.png'></div><div id="new-status-text" class='status-text'></div><div id="new-status-preview" class='status-preview'><img id="new-status-image" src="#"></div></div>

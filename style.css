@@ -116,6 +116,17 @@ ul {
   display: block;
 }
 
+#status-updates-library-header {
+  width: 31%;
+  float: left;
+  margin-left: 2%;
+  margin-right: 2%;
+  background-color: darkturquoise;
+  border-left: 10px solid darkturquoise;
+  border-right: 10px solid darkturquoise;
+  border-top: 10px solid darkturquoise;
+}
+
 #status-updates {
   width: 31%;
   float: left;
@@ -125,7 +136,9 @@ ul {
   margin-right: 2%;
   background-color: darkturquoise;
   padding: 5px;
-  border: 10px solid darkturquoise;
+  border-left: 10px solid darkturquoise;
+  border-right: 10px solid darkturquoise;
+  border-bottom: 10px solid darkturquoise;
 }
 
 #status-updates h2 {
@@ -134,7 +147,7 @@ ul {
 
 #type-updates-buttons {
   position: relative;
-  right: 5px;
+  left: 5px;
 }
 
 .updates-button {
