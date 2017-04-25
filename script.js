@@ -60,11 +60,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (el.className.includes("new-status-update")) {
       $(el).children("#new-status-text").removeAttr("id");
       $(el).children("#new-status-preview").children("#new-status-image").removeAttr("id");
+      if ($("#new-status-image").attr("src") === "#") {
+        $("#new-status-preview").hide();
+      }
       $(el).children("#new-status-preview").removeAttr("id");
       $(".new-status-input").val("");
       $("#new-status-text").html("");
       $("#new-status-image").attr("src", "#");
-      $("#new-status-preview").hide();
+
     }
   })
   .on("drag", function(el) {
@@ -195,8 +198,10 @@ function printList(){
         addToPrint((u + 1) + ": " + updateText);
         aPreview = updates[u].getElementsByClassName("status-preview")[0];
         if (aPreview) {
-          updatePreview = aPreview.innerHTML;
-          addToPrint(updatePreview);
+          if ($( aPreview.firstChild ).attr("src") != "#") {
+            updatePreview = aPreview.innerHTML;
+            addToPrint(updatePreview);
+          }
         }
       }
     }

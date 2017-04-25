@@ -6,6 +6,7 @@ span.clear { clear: both; display: block; }
 
 body {
   font-family: "Open Sans", sans-serif;
+  margin: 0;
 }
 
 h1, h2, h3 {
@@ -30,6 +31,7 @@ ul {
   height: 100%;
   background-color:rgba(0, 60, 60, 0.2);
   position: absolute;
+  top: -20px;
   overflow: visible;
   display: none;
 }
@@ -285,18 +287,36 @@ ul {
 }
 
 .print-button {
-  border: 3px solid orange;
   cursor: pointer;
   text-align: center;
-  width: 20%;
-  padding: 5px;
+  display: inline-block;
+  position: fixed;
+  top: -1px;
+  left: -1px;
+  width: auto;
+  padding: 0 10px 10px;
+  background-color: #ACE2D4;
+  border: 1px solid black;
+}
+
+.printer-icon {
+  position: relative;
+  top: 10px;
+  width: 30px;
+}
+
+.arrow-icon {
+  position: relative;
+  top: 10px;
+  width: 30px;
 }
 
 #printer-friendly {
   display: none;
   min-height: 100px;
   width: 100%;
-  margin: 20px 0;
+  max-width: 800px;
+  margin: 20px auto;
 }
 
 #printer-friendly h3 {

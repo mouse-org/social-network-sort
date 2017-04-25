@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!--
 To Dos:
-- Add Public/Private UI changes
 - Add Public/Private to Printable version
 - Remove status updates
   - Put 'x' icon to click
@@ -9,7 +8,6 @@ To Dos:
 - Add more instructions below if necessary
 - CSS comments
 - Fix box alignment
-- Add other updates from other types
 - Better styles
 - Responsive layout
 - Condense Status Update Library Button code
@@ -31,10 +29,10 @@ To Dos:
   <body>
     <div id="printable-buttons">
       <div class="print-button" onClick="printList()">
-        Click to Print
+        <img src="images/printer.png" class="printer-icon">Click to Print
       </div>
       <div class="print-button" onClick="backToSort()" style="display: none;">
-        Back to Sorting
+        <img src="images/arrow.png" class="arrow-icon">Back to Sorting
       </div>
     </div>
     <div id="printer-friendly">
