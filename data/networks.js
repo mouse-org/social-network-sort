@@ -4,7 +4,7 @@ var networkList = [
     "imageURL": "facebook.png",
     "color": "#3b5998",
     "statusUpdates": [
-      "Hello World! This is my first post on Facebook!"
+      "Hello World! This is my first status update on Facebook!"
     ]
   },
   {
@@ -12,7 +12,7 @@ var networkList = [
     "imageURL": "instagram.png",
     "color": "#bc2a8d",
     "statusUpdates": [
-      "Hello World! This is my first post on Instagram!"
+      "Hello World! This is my first picture on Instagram!"
     ]
   },
   {
@@ -32,19 +32,11 @@ var networkList = [
     ]
   },
   {
-    "name": "Periscope",
-    "imageURL": "periscope.jpeg",
-    "color": "#D95343",
-    "statusUpdates": [
-      "Hello World! This is my first post on Periscope!"
-    ]
-  },
-  {
     "name": "Pintrest",
     "imageURL": "pintrest.jpeg",
     "color": "#cb2027",
     "statusUpdates": [
-      "Hello World! This is my first post on Pintrest!"
+      "Hello World! This is my first pin on Pintrest!"
     ]
   },
   {
@@ -52,7 +44,7 @@ var networkList = [
     "imageURL": "snapchat.png",
     "color": "#fffc00",
     "statusUpdates": [
-      "Hello World! This is my first post on Snapchat!"
+      "Hello World! This is my first snap on Snapchat!"
     ]
   },
   {
@@ -60,7 +52,7 @@ var networkList = [
     "imageURL": "soundcloud.png",
     "color": "#f50",
     "statusUpdates": [
-      "Hello World! This is my first post on SoundCloud!"
+      "Hello World! This is my first song on SoundCloud!"
     ]
   },
   {
@@ -72,11 +64,19 @@ var networkList = [
     ]
   },
   {
+    "name": "Twitch",
+    "imageURL": "twitch.png",
+    "color": "#6441A4",
+    "statusUpdates": [
+      "Hello World! It's my first time streaming on Twitch!"
+    ]
+  },
+  {
     "name": "Twitter",
     "imageURL": "twitter.jpeg",
     "color": "#55acee",
     "statusUpdates": [
-      "Hello World! This is my first post on Twitter!"
+      "Hello World! This is my first tweet on Twitter!"
     ]
   },
   {
@@ -84,7 +84,7 @@ var networkList = [
     "imageURL": "whatsapp.png",
     "color": "#4bc959",
     "statusUpdates": [
-      "Hello World! This is my first post on WhatsApp!"
+      "Hello World! This is my first message on WhatsApp!"
     ]
   },
   {
@@ -92,7 +92,7 @@ var networkList = [
     "imageURL": "youtube.png",
     "color": "#bb0000",
     "statusUpdates": [
-      "Hello World! This is my first post on YouTube"
+      "Hello World! This is my first video on YouTube"
     ]
   }
 ]
