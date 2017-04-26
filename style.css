@@ -59,10 +59,11 @@ ul {
 }
 
 .privacy-sliders {
-  float: left;
+  position: relative;
   width: 50%;
   margin: 5px 25%;
   cursor: pointer;
+  display: block;
 
 }
 
@@ -208,9 +209,10 @@ ul {
   background-color: #EAEAEA;
   padding: 5px;
   cursor: move;
-  float: left;
+  position: relative;
   width: 100%;
   margin-bottom: 5px;
+  display: inline-block;
 }
 
 .blank-status-update {
@@ -223,8 +225,8 @@ ul {
 
 .status-avatar {
   width: 20%;
-  float: left;
-  display: block;
+  position: relative;
+  display: inline-block;
 }
 
 .status-avatar img {
@@ -234,8 +236,8 @@ ul {
 
 .status-text {
   width: 75%;
-  float: right;
-  display: block;
+  position: relative;
+  display: inline-block;
 }
 
 .status-preview {
@@ -244,7 +246,7 @@ ul {
   margin: 3px;
   margin-left: 20%;
   background-color: lightcyan;
-  float: left;
+  position: relative;
   width: 80%;
 }
 
