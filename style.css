@@ -47,15 +47,19 @@ ul {
 
 #networks {
   width: 63%;
-  float: left;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .network {
   width: 30%;
-  float: left;
+  position: relative;
+  display: inline-block;
   margin: 0 1%;
   padding: 10px;
   background-color: lightgrey;
+  vertical-align: top;
 }
 
 .privacy-sliders {
@@ -72,7 +76,8 @@ ul {
   width: 100%;
   min-width: 40px;
   border-radius: 10px;
-  float: left;
+  position: relative;
+  display: block;
   background-color: white;
   padding: 5px;
 }
@@ -119,9 +124,15 @@ ul {
   display: block;
 }
 
-#status-updates-library-header {
+#status-updates-container {
   width: 31%;
-  float: left;
+  display: inline-block;
+}
+
+#status-updates-library-header {
+  width: 100%;
+  position: relative;
+  display:block;
   margin-left: 2%;
   margin-right: 2%;
   background-color: darkturquoise;
@@ -131,8 +142,9 @@ ul {
 }
 
 #status-updates {
-  width: 31%;
-  float: left;
+  width: 100%;
+  position: relative;
+  display: block;
   max-height: 35em;
   overflow: scroll;
   margin-left: 2%;
@@ -285,14 +297,14 @@ ul {
 
 #chosen-networks {
   display: none;
-  float: left;
+  position: relative;
 }
 
 .print-button {
   cursor: pointer;
   text-align: center;
   display: inline-block;
-  position: fixed;
+  position: absolute;
   top: -1px;
   left: -1px;
   width: auto;
@@ -339,4 +351,26 @@ ul {
 
 #new-status-preview {
   display: none;
+}
+
+.close-status {
+  position: absolute;
+  top: 0px;
+  right: 2px;
+  cursor: pointer;
+  color: #8F8F8F;
+}
+
+.print-privacy {
+  text-align: center;
+  width: 20%;
+  margin: 0 40%;
+}
+
+.print-public {
+  background-color: #ACE2D4;
+}
+
+.print-private {
+  background-color: #F9D0C2;
 }

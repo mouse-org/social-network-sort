@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     statusUpdateHTML += "<div class='status-update-category drag-container' id='" + cat + "-updates'>";
 
     for (j = 0; j < updates[cat].length; j++) {
-      statusUpdateHTML += "<div class='status-update'><div class='status-avatar'><img src='images/speaking-user.png'></div><div class='status-text'>" + updates[cat][j][0] + "</div>";
+      statusUpdateHTML += "<div class='status-update'><div class='close-status'>x</div><div class='status-avatar'><img src='images/speaking-user.png'></div><div class='status-text'>" + updates[cat][j][0] + "</div>";
       if (updates[cat][j].length > 1) {
         if (updates[cat][j][1] == "text") {
           statusUpdateHTML += "<div class='status-preview'>" + updates[cat][j][2] + "</div>";
@@ -122,7 +122,7 @@ function chooseNetwork(networkID) {
     setTimeout(function(){
       socialNetworkList.style.display = "none";
       loading.style.display = "none";
-      chosenNetworks.style.display = "inline";
+      chosenNetworks.style.display = "inline-block";
       directions.innerHTML = "Move statuses from the library into the appropriate network."
     }, 500);
   }
@@ -155,6 +155,14 @@ function chooseNetwork(networkID) {
   });
 
   $('.slider').click(function(){
+      if ($(this).parent().parent().hasClass("set-public")){
+        $(this).parent().parent().addClass("set-private");
+        $(this).parent().parent().removeClass("set-public");
+      } else {
+        $(this).parent().parent().addClass("set-public");
+        $(this).parent().parent().removeClass("set-private");
+      }
+
       $(this).children('.public').toggle();
       $(this).children('.private').toggle();
   });
@@ -189,6 +197,11 @@ function printList(){
   for (l = 0; l < lists.length; l++) {
     name = lists[l].getElementsByClassName("network-name")[0].innerHTML;
     addToPrint("<h3>" + name + "</h3>");
+    if ($( lists[l] ).hasClass("set-public")){
+      addToPrint("<h4 class='print-public print-privacy'>Public</h4>");
+    } else {
+      addToPrint("<h4 class='print-private print-privacy'>Private</h4>");
+    }
     updatesList = lists[l].getElementsByClassName("drag-container")[0];
     updates = updatesList.getElementsByClassName("status-update");
     for (u = 0; u < updates.length; u++) {
@@ -214,3 +227,10 @@ function backToSort() {
   togglePrint();
   document.getElementById("printer-friendly").innerHTML = "";
 }
+
+jQuery(document).on('click','.close-status', function() {
+  if ($( this ).parent().parent().children().length <= 3){
+    $( this ).parent().parent().children().show();
+  }
+  $( this ).parent().remove();
+})

@@ -2,9 +2,6 @@
 <!--
 To Dos:
 - Add Public/Private to Printable version
-- Remove status updates
-  - Put 'x' icon to click
-  - Move status back to library on 'x' click
 - Add more instructions below if necessary
 - CSS comments
 - Fix box alignment
@@ -12,7 +9,6 @@ To Dos:
 - Responsive layout
 - Condense Status Update Library Button code
 # Fix update text that breaks out of boxes
-? Figure out if I need to be floating stuff at all
 -->
 
 
@@ -59,7 +55,7 @@ To Dos:
 
       <div id="chosen-networks">
         <div id="networks">
-          <div id="network0" class="network">
+          <div id="network0" class="network set-public">
             <h2 id="network0-name" class="network-name"></h2>
             <div class="privacy-sliders">
               <div class="slider">
@@ -78,6 +74,9 @@ To Dos:
            <div class="status-list">
               <div class="drag-container">
                 <div class="status-update">
+                  <div class="close-status">
+                    x
+                  </div>
                   <div class="status-avatar">
                     <img src="images/speaking-user.png"></div>
                   <div id="network0-first-status" class="status-text">
@@ -91,7 +90,7 @@ To Dos:
               </div>
             </div>
          </div>
-         <div id="network1" class="network">
+         <div id="network1" class="network set-public">
             <h2 id="network1-name" class="network-name"></h2>
             <div class="privacy-sliders">
               <div class="slider">
@@ -110,6 +109,9 @@ To Dos:
             <div class="status-list">
               <div class="drag-container">
                 <div class="status-update">
+                  <div class="close-status">
+                    x
+                  </div>
                   <div class="status-avatar">
                     <img src="images/speaking-user.png"></div>
                   <div id="network1-first-status" class="status-text">
@@ -125,7 +127,7 @@ To Dos:
 
             </div>
           </div>
-          <div id="network2" class="network">
+          <div id="network2" class="network set-public">
             <h2 id="network2-name" class="network-name"></h2>
             <div class="privacy-sliders">
               <div class="slider">
@@ -144,6 +146,9 @@ To Dos:
             <div class="status-list">
               <div class="drag-container">
                 <div class="status-update">
+                  <div class="close-status">
+                    x
+                  </div>
                   <div class="status-avatar">
                     <img src="images/speaking-user.png"></div>
                   <div id="network2-first-status" class="status-text">
@@ -158,34 +163,36 @@ To Dos:
             </div>
           </div>
         </div>
-        <div id="status-updates-library-header">
-          <h2>Status Update Library</h2>
-          <div id="type-updates-buttons">
-            <div class='updates-button' id='text-updates-button'>Text</div><div class='updates-button' id='image-updates-button'>Images</div><div class='updates-button' id='video-updates-button'>Videos</div><div class='updates-button' id='media-updates-button'>Audio</div><div class='updates-button' id='new-updates-button'>&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;</div>
+        <div id="status-updates-container">
+          <div id="status-updates-library-header">
+            <h2>Status Update Library</h2>
+            <div id="type-updates-buttons">
+              <div class='updates-button' id='text-updates-button'>Text</div><div class='updates-button' id='image-updates-button'>Images</div><div class='updates-button' id='video-updates-button'>Videos</div><div class='updates-button' id='media-updates-button'>Audio</div><div class='updates-button' id='new-updates-button'>&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;</div>
+            </div>
           </div>
-        </div>
-        <div id="status-updates">
+          <div id="status-updates">
 
-          <div id="status-list" class="status-list">
+            <div id="status-list" class="status-list">
 
-            <div id="status-update-library">
+              <div id="status-update-library">
 
-              <div id="update-categories">
-                <div class="status-update-category drag-container" id="new-updates">
-                  <div class='status-update new-status-update'><div class='status-avatar'><img src='images/speaking-user.png'></div><div id="new-status-text" class='status-text'></div><div id="new-status-preview" class='status-preview'><img id="new-status-image" src="#"></div></div>
-                  <div id="new-status-form">
-                    <label>Status:</label><br>
-                    <input type="text" id="new-status-text-input" class="new-status-input" onkeyup="populateNewStatus()"></input><br>
-                    <label>Image:</label><br>
-                    <input type="text" id="new-status-image-input" class="new-status-input"></input><br>
-                    <button id="new-status-image-button" onclick="addImageToStatus()">Add Image</button>
+                <div id="update-categories">
+                  <div class="status-update-category drag-container" id="new-updates">
+                    <div class='status-update new-status-update'><div class='status-avatar'><img src='images/speaking-user.png'></div><div id="new-status-text" class='status-text'></div><div id="new-status-preview" class='status-preview'><img id="new-status-image" src="#"></div></div>
+                    <div id="new-status-form">
+                      <label>Status:</label><br>
+                      <input type="text" id="new-status-text-input" class="new-status-input" onkeyup="populateNewStatus()"></input><br>
+                      <label>Image:</label><br>
+                      <input type="text" id="new-status-image-input" class="new-status-input"></input><br>
+                      <button id="new-status-image-button" onclick="addImageToStatus()">Add Image</button>
+                    </div>
                   </div>
                 </div>
               </div>
+
             </div>
 
           </div>
-
         </div>
       </div>
     </div>
